@@ -1,0 +1,95 @@
+* {
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --PaleBlue: hsl(225, 100%, 94%);
+  --BrightBlue: hsl(245, 75%, 52%);
+  --VeryPaleBlue: hsl(225, 100%, 98%);
+  --DesaturatedBlue: hsl(224, 23%, 55%);
+  --DarkBlue: hsl(223, 47%, 23%);
+  --pragraphFont: 16px;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  background-image: url(../image/pattern-background-desktop.svg);
+  width: 1440px;
+  /* background-image: image("../image/pattern-background-desktop.svg"); */
+}
+
+.parent {
+  width: 375px;
+  margin: 20px auto;
+  border: 1px solid black;
+  background-color: #fff;
+  font-size: var(--pragraphFont);
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: 1fr 1fr 20% 20%;
+  grid-template-areas: "image image image " ". cont ." ". plan ." ". btn .";
+}
+
+.parent .head img {
+  width: 375px;
+}
+
+.head {
+  grid-area: image;
+  border: 1px solid black;
+}
+
+.parent .content .main {
+  padding: 5px 0;
+  margin: 5px 0;
+  color: var(--DarkBlue);
+  font-weight: 900;
+  font-size: 20px;
+}
+.parent .content p {
+  font-size: 14px;
+  color: var(--DesaturatedBlue);
+  padding: 0 15px;
+  margin-bottom: 10px;
+}
+
+.content {
+  grid-area: cont;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.prices {
+  grid-area: plan;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "icn pln . cncl" "icn prc . cncl";
+  align-items: center;
+  justify-items: center;
+}
+
+.prices .icon {
+  grid-area: icn;
+}
+
+.prices .plan {
+  grid-area: pln;
+}
+
+.prices .price {
+  grid-area: prc;
+}
+
+.prices a {
+  grid-area: cncl;
+}
+
+.footer {
+  grid-area: btn;
+  border: 1px solid black;
+  text-align: center;
+}
