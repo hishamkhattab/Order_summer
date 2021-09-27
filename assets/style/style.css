@@ -16,29 +16,32 @@
 body {
   font-family: "Red Hat Display", sans-serif;
   background-image: url(../image/pattern-background-desktop.svg);
-  width: 1440px;
-  /* background-image: image("../image/pattern-background-desktop.svg"); */
+  width: 100vw;
+  height: 90vh;
 }
 
 .parent {
   width: 375px;
+  height: 530px;
   margin: 20px auto;
-  border: 1px solid black;
   background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   font-size: var(--pragraphFont);
   display: grid;
   grid-template-columns: 10% 1fr 10%;
-  grid-template-rows: 1fr 1fr 20% 20%;
+  grid-template-rows: 1fr 1fr 20% 20% 10%;
   grid-template-areas: "image image image " ". cont ." ". plan ." ". btn .";
 }
 
 .parent .head img {
   width: 375px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .head {
   grid-area: image;
-  border: 1px solid black;
 }
 
 .parent .content .main {
@@ -57,39 +60,76 @@ body {
 
 .content {
   grid-area: cont;
-  border: 1px solid black;
   text-align: center;
 }
 
 .prices {
-  grid-area: plan;
-  border: 1px solid black;
+  /* The OLD ONE
+   grid-area: plan;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 20% 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "icn pln . cncl" "icn prc . cncl";
-  align-items: center;
+  grid-template-areas:
+    "icn pln . cncl"
+    "icn prc . cncl";
+  justify-items: center; */
+
+  /*THe NEw oNe*/
+  grid-area: plan;
+  display: grid;
+  grid-template-columns: 5% auto auto 9% auto 5%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    ". icn pln . cncl ."
+    ". icn prc . cncl .";
   justify-items: center;
 }
 
 .prices .icon {
   grid-area: icn;
+  align-self: center;
 }
 
 .prices .plan {
   grid-area: pln;
+  align-self: end;
+  color: var(--DarkBlue);
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .prices .price {
   grid-area: prc;
+  align-self: start;
+  font-size: 14px;
+  color: var(--DesaturatedBlue);
 }
 
 .prices a {
   grid-area: cncl;
+  align-self: center;
+  justify-self: center;
 }
 
 .footer {
   grid-area: btn;
-  border: 1px solid black;
   text-align: center;
+  justify-self: center;
+  /* align-self: center; */
+  width: 100%;
+}
+
+.footer .button {
+  margin-bottom: 30px;
+  padding: 10px;
+  width: calc (100% - 20px);
+  border-radius: 10px;
+  color: var(--VeryPaleBlue);
+  box-shadow: 0px 5px 20px 0px grey;
+  background-color: var(--BrightBlue);
+}
+
+.footer .cancel {
+  font-size: 14px;
+  color: var(--DesaturatedBlue);
 }
