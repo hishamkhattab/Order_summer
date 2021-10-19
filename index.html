@@ -18,11 +18,17 @@
     <title>Order-summary</title>
   </head>
   <body>
-    <div class="parent">
-      <img src="./assets/image/illustration-hero.svg" alt="" srcset="" />
+    <main class="parent">
+      <img
+        src="./assets/image/illustration-hero.svg"
+        alt="illustration-hero"
+        srcset="./assets/image/illustration-hero.svg 450w"
+        sizes="(max-width: 767px) 300px,
+        400px"
+      />
 
       <section class="content">
-        <p class="main">Order summary</p>
+        <h1 class="main">Order summary</h1>
         <p class="text">
           You can now listen to millions of songs, audiobooks, and prodcasts on
           any devices anywhere you like
@@ -30,20 +36,24 @@
       </section>
       <section class="prices">
         <div class="icon">
-          <img src="./assets/image/icon-music.svg" alt="" srcset="" />
+          <img
+            src="./assets/image/icon-music.svg"
+            alt="music-icon"
+            srcset="./assets/image/icon-music.svg 48w"
+            sizes="48px"
+          />
         </div>
         <div class="plan">
-          <p>Annual Plan</p>
+          <h4>Annual Plan</h4>
           <span>$59.99/year</span>
         </div>
 
         <p class="link">change</p>
-        <!-- <a href="#">change</a> -->
       </section>
-      <div class="footer">
+      <footer class="footer">
         <div class="button">Process to Payment</div>
         <div class="cancel">Cancel Order</div>
-      </div>
-    </div>
+      </footer>
+    </main>
   </body>
 </html>
